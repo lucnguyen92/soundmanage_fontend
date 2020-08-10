@@ -3,12 +3,53 @@
 
 <head>
     <title>AnguarJs SoundManager2 - SoundCloud</title>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css" />
 </head>
 
 <body ng-app="myApp">
     <div class="container" ng-controller="MainCtrl">
+        <!-- create  header -->
+        <header class="header navbar justify-content-center navbar-light bg-light ">
+            <!-- toggler collapse -->
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
+                    aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <a class="navbar-brand" href="#">Navbar</a>
+
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="#">Disabled</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- navbar brand -->
+            <a href="#" class="nav-brand">
+                <img src="https://is5-ssl.mzstatic.com/image/thumb/Purple113/v4/e1/90/dc/e190dc15-b89d-8e8a-2027-2fb11741a3d2/AppIcon-1x_U007emarketing-0-6-0-0-sRGB-85-220.png/600x600wa.png"
+                    class="logo" width="30" height="30" alt="Logo">Logo
+            </a>
+
+            <div class="search">
+                <form class="form-inline">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                </form>
+            </div>
+            <div class="icon-login">
+
+            </div>
+        </header>
         <div class="row">
             <div class="col-md-12">
 
@@ -33,7 +74,8 @@
                 <sound-manager></sound-manager>
 
                 <p>
-                    Currently Playing: {{ currentPlaying.title }} by {{ currentPlaying.artist }} ({{ currentPostion }} / {{ currentDuration }})
+                    Currently Playing: {{ currentPlaying.title }} by {{ currentPlaying.artist }} ({{ currentPostion }} /
+                    {{ currentDuration }})
                 </p>
 
                 <div class="seekBase" seek-track>
@@ -51,22 +93,22 @@
                 <button play-pause-toggle data-play="Play!" data-pause="Pause!">Play Toggle</button>
 
                 Is Playing: {{ isPlaying }}
-                <br/>
-                <br/>Volume: {{ volume }} -
+                <br />
+                <br />Volume: {{ volume }} -
                 <button music-volume data-type="increase">+</button>
                 -
                 <button music-volume data-type="decrease">-</button>
                 -
                 <button mute-music>Mute ({{ mute }})</button>
-                <br/>
-                <br/>
+                <br />
+                <br />
                 <button prev-track>Prev Track</button>
                 -
                 <button next-track>Next Track</button>
                 -
                 <button clear-playlist>Clear Playlist</button>
-                <br/>
-                <br/>
+                <br />
+                <br />
                 <h5>Playlist</h5>
                 <ul>
                     <li ng-repeat="song in playlist">
@@ -81,9 +123,17 @@
             </div>
         </div>
     </div>
-    
+
     <script src="//connect.soundcloud.com/sdk.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
     <script src="../dist/angular-soundmanager2.js"></script>
     <script src="app.js"></script>
 </body>

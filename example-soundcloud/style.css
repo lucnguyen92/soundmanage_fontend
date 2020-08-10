@@ -1,3 +1,25 @@
+*{
+  margin: 0px;
+  padding: 0px;
+
+}
+.container{
+  max-width: 1140px;
+  display: block;
+  margin: 0 auto;
+
+}
+.logo{
+  border-radius: 20px;
+}
+
+.form-control{
+  border-radius: 30px;
+}
+
+
+
+
 .seekBase {
   height: 30px;
   width: 90%;
