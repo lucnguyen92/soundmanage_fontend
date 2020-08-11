@@ -3,54 +3,69 @@
 
 <head>
     <title>AnguarJs SoundManager2 - SoundCloud</title>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" type="text/css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css" />
+    <script src="https://use.fontawesome.com/fc28b2913a.js"></script>
 </head>
 
 <body ng-app="myApp">
-    <div class="container" ng-controller="MainCtrl">
+    <header class="container-fluid bg-dark">
         <!-- create  header -->
-        <header class="header navbar justify-content-center navbar-light bg-light ">
-            <!-- toggler collapse -->
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
-                    aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <a class="navbar-brand" href="#">Navbar</a>
+       
+      <!-- button--------------------------------------- -->
+      
 
-                <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled" href="#">Disabled</a>
-                        </li>
-                    </ul>
+      <!-- -------------------------------------------sidebar-->
+      <ul class="sidebar">
+          <li class="acount-avatar">
+              <a href="#"><img
+                      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAflBMVEX///8AeNYAddUAbdMAc9UAcNQAdtYAcdQAbtQAa9Pg7Pn5/P7l7/rr8/uNt+jF2vPY5/e71PHz+P2pyO3P4fWWvOkohNlWmN83itsdgNiFsuavzO4VftiOuOhnoeFFkN14quSkxex6q+S30fBRlt5BjtxspOLK3fScwOpaneANKKPuAAASZ0lEQVR4nO1d6XqrPA4uNmAI2ROy0uxN0vu/wQlpGyQvYNmk6cyc93lmfnynAWRrtyS/vf3DP/zDP/xPYdztlOiNX/0h7WI8HO1Xm+0sELxCWMxO5/5k0Mle/XleyIbr1ZYlSSRCxuIAI2ZMiIgnxbw/6rz6S13QO64WEb+RFjSB3ehkp/fLf9NujkeHgkehvGsNZKaL9+mrv9wK3f02iUICcRXfioRtjn98K7v5LBXNjFmzl1E6/7tEZpMFJ7Gmichoc3k1LTpMN1z4k/dNZBLkvVcTJGEy4z7MqSLkm+GriaowfmdRW9tXgfHF4NWUfaF3SJxUZzPiZHl8NXW3/bOhj4VhFCU3Zy1N0/v/OE+iKAwVR0elsXgxjdmK19NXOixiOT/k68Gw8rizXmc4WOeH+TK8eQa1Ahwns1fy6j6soS8OIx7M81Gtc511B9dNkUY1RjTmp1f5rYMiMn5WGCWL1chW448H79vI7AixdPcKJ6A35wYpigUPDiNqDJgNVoXRYRDh+ilE1OFqsn8hX/ZdLVknX5jkOvnotvr9jZ+y0DPozRlZ+Rnqbl7o147xvKWPt0Gu/wjB523ovek5EbrHR4vf2saedgPjiPXb8iWza6FzklgyaekF9ThGmg28meZ23z5a6PiEf/6CUj1zHX2zUesvunxolHUYPNsf7800IhIV7dNX4jJTaYz5czn1ouFQETzPVo00TgXfPe11NyOYKu9j/P2JL7y9UnV1xMfThHGniiCfPzsWz84Kq7LgSWZjq3CMCJ4jgBjTQpb9WDwj7zieKezyaw7xKpW3kbe/tL1A1jFh8HsZsaGyjbxt9daNZQJ/xfhWUMxwum/1+R05Ufhss6TiKPtxrXriCoFh8fthd3cpcWp6be/ZMoHRvLVnU/CZPInEnpwSS/stPZmKXPI40nbUzTiQBeB1Cb6RpG/SVozGEmvROHrlKd9QEhjewsdssaF/msdkCdkuR96fs8EKjBWvrqMYY56KA0+znGP1xZavP73MMIls4fW0EVZebPZ6Am8kzhCJ4uzxrO7f28ES0i5yD/+tQIqLFX+DwBuJBSIxdc7dfCItEwevVjIVZCfEcen32Lz66+Xb4o9LtMAKHRSNhye3h2AC/Wzr+LLfnYpAlMekCQtm89XaLy14QTowcRLFJWKE1N1VG492yzRCBWAxC6OEL1YeMfQEbQB3iHVWSAgjV2c7m5wSXZL8TmeYiE9nz/IAGTWekX8/RVwQOoZL042RvG+wKDo4xppb+OSInNREhiIunD5Bf/agIOQnJ5nMkBhR+RTzqAuXvw1miW2RDUvnLop6CkWR6L11EI+65GS6W9MhuIHGFf0dbzkUxYikTxeQu8JP+rv75CIwETiYIyyKBI9kjf1RsoXuLM1VGmY4bOMYChPb2P8QBb0p2WhNSAxaIVqQ/cI1FEV7p2QFKRQ76lt1Z6h2YIKsVOfQj7A1ij3Mo8RXZh/aMgNLkM8jxlAeEkvHa8M8Xjle+hUqkhOEe0iind1GloIRnZlxYdahLBTRF+qaFFKqaVoAobezGJ9oC2kHoEYCY8HFdnU9Di6Xy+B4XZ0YNxXrUX38IdoRmx9APSFo3p6UXqjey5fvsg7p7Lf6wiCy8j4DubDZRLSFRDWz1cogS0/6b+5d9dWNxFi7hx7S+Oco7o1oYr/TfS/j5xqvdh1rFiUmJoT6cBMbxRhuOTGkWOvsYLKt99oz9QSbHKxlFHU6hl+ZkCxFV0MgE81coKtzJGYlrkCgmz76HW4hLW5eaIqJFlaquK+W6XCSKGbg1Wxb/7eQY2hbmGuql2yz0RfFPrIPyrvfcrCJaa1YjMBn0qSwp6kmsjc1PcWO0gotoSSGu7q/hPEWTZHOFR7llDPobCHr1JCkT2FOQtT8skt1Dx6YKqKUEEslZBLFgfJryEJ1W/MOV4LkznzIW0g/EZpJj6A5jMBRiWtkuHB9wUWWQqKmKDGW2ZS0RjArlRoVMfwrWlCxlbeQJkVfGErLlJA2EaToQ6OAHIAoJJSq+6EshdwpXb/Hobcg5W2A1Y+Xpj9y9rkPspbYUX5dQWIFkq6D3pgpvzsFSxiS1k+ZJkD5MYDk+JH46O1ULY+JTWECilNSQhepGss2XaL5BBQxMpKuOVZW3+RvAlk1c7IOEpPG7tURGXb9SLwAf5tqlRRkEZoxLNBneZ2lokQmjZOgSRRan28iHB8tSU+dwSU+y6z2dQBsyrQHEcizpDx5jVmLmBiQADNnASOdz0NtqlXD0D0n+YSSGCZehQhXfPRM+u1HtTo6JoQeRUSKDBe46satLuIHuD6CFgjn1VKHmsBmDzMBpBMSvIW6Z1OA1BZtqcEm6ZxOkMunqXsp9k08Kz7RmQJN1UCnTMPfYO1oDs0UKxo/MZQEkaYQoLJUHbexsxhKqpTkK2gwgI8jCvW1EphI8asu4MG02BNrP09FI1lEonsEPGuVD69QX5Ae28cU7kg/VpEhJ5eWk86qKE5NKp4rFtY7BEZgcxh6dyogpidGKbBSTf63mU2IrMUZBXXCu1cnQI+j/RZ8iyJqYOVoikaikLg8Giw9KAQ6QW6a6FlEyAb8JQqBIpbDC2jU6jKqGuxalkPEpaREBlLEsjKFRo1o0XBIV59TtwE2r7TfZtW3yPVDwGmlFifkiEJve4isBblstFKYsikFKp/oKaHI2amUFQNbfGo0Dfy20PwvRF0xkAJgT78Ue22EUrU7wE5JHwJiPGqMPsSZtsRzcAVieloMgH8tGUSgoiPijJkMR0/6JJA9UDKF/DCgMaWlBt4OeRNwqo3MWBKQdSUHm4DHI3yyADiNXPI898jFK5ginufUckwgMtg1g5xGLPTCh+gu646ArSu5gh5oYqxPkNNGXTdJmfrZfNxbSD5mBYQIVLECjVBKfaqkaqheH8IRrRY99Qq+BafEOj4USqVwxKJ5DNwPSKlN/0YVA2O77kfhQDp7opYVV0DlsGT/sURFoUAxAKSQ0x8rHc04R8FjnHpVs0nNAHJopJC+h1IyippRrnCWzgccHgH2EJ2feWmaNznicQ0wBrgcgBoC3GGSw54nhX3pIN+p4zGTp1O4dFuBPUS6NPOxh+Xv5Xrm1LfFx5ERQGJb8mmh1+YyvSuXSWTkp6wkVndZJMiMkp4CDOLEHGo5BrXzeyL5DW6yDFSmlDIE0ZNbgLeWbSJxgsZIKTpyWmjoeePYAkbAbjNIldo90hSUo0wgOfb9AvCRE7xEwPFyPIdXy7xjYV37tVd+7BiDwQgYawKYiXL0SK5qGXRq+Sh1XGFzU4EeuTFPk7vn2h5QChRvb9laqNTeQumdcc7YgZ2SuADWorgO8pIt9v1hzYHGNVFXxk3NvMHiNjlfCpMHzqe4coHo1zbOau3aSNdQ6z6PpYoB5HwRdNvcI1hFI94Xk5+MNK61He3COZkFatuEfIACS77c5+ldtQ2yuta1m4N13HDttRiioSekBsDgK9064ISUeH6IsJIN//c+Ch58XgedLycg614mu5lpnkToMfgJ9IsoCbGze1of4aARq++dDCPOuYhDnvJIGK+28JpYCNxjJYAAQSzxHF/C1qfR+bb0O5+Xw4yR/G+w2sQ9z1JCtW4EcFdj/IXqQarjPvbJCWNsnPvxA+53gtwzHwG/oWySj6opsXa9GIncxy0BKBpNFgtUzDn69RXkpIYllr4T5cGRgKZuE1RfepSi35DloaMkFu+e89JADKgp4oAul2s2sMRVuGsawc8+I9PGlTHW2gP3miGAutt1bBDys7uaA2IodJ4tPMrfub1ibLxdh0Kjsz4FlT3aZgNYBu1mEScNc70sIQrHMW7gGdqKP5iGoLVyfKG31fukDkid7D4s89ZHJyDfpoQezZhoAlkZMWMsDJl6sawMMXOQRlDoasg1AWtC63sq0TBYqLx/jReL+WZ3OJw3pwVLk9qrWJl9FusBUFya6o0BbEEjsmntYCEWcnbKpUt/x8P1YVFzExl9HDlgUqNBB6+juTU1c3eYSD+upuUaDw6x8XJB6m0rK4t04c6x1lu9GeJnLQXfThq8h+lOGC7AJEaKcHFMWQrIpoT+za5BcTC+vNoojGyy1GspQTm6AEftNblI+HnWYbAydv+Hvrn94dFAd7fTjdsIGRvosJhFGPXJWurrTM+i1GsZLzOdNbUfn4vOeM2fDsd82ZpEeRTC15cF9OOddazRx9aJRWAMa+e3wEY7u7ORk04Vuvkkmea2pSCyVOq2I0tgubfV4YhuNFToMsXyjmmgrpfdaNGJdSU+cUqUfHBbIpm7V31l8jUkgeVpN+y8q2cgqGuaZwzpDio8r0bZqwcDolnnjcDC1M8YQiqp8YgrU5WM//0eU8X+s+ajNpCxbzz/hznVpk1UDwzbuN+jq5ifxlk3I4qrAhmvQRK/RpHAmrZ2bodQvdymC7oK0jQI61FR3wwNZXzRzuUJmUJiVCuKyAI0VyGgEdJ1/vfXUoCw2fO2EADleqL6IWzwL23qpmHZSM18jCOXCWzxfo+ecpFcTSEmbGK1MuJoE83e6X2Vi4pH273+YqrYIeOf9myZrgKURGPZwn0sGANzGpJ2b2KTfQlzVe7cVnFUQHbcMEf4PqA43lZb6HE7hB5niVFN/VQje+VfAY010O/71zCgynjS5sdZARe1B6FeJWTwb6zHOo+h56SdanU/IWDVyTg9N9cMeYCY3qGGW01Q5nD2nnas7119zaq99ijfMOOA+VR7FIEuY6EkCHHxvbp45bvDVcWjT7kuEDFgoDV16E9IQ/oGUNmodyPcnYjloRJXDzpqIE3c0HicczQfn2SP8VBv2YyWrryoiv1oo1wJwJf5qMkxZFISWtUoGlcvi9mXOXlQ6HdkXIcRjoflXD2aR0SeRYkGO0t2pgyT2Wr2oN+tqNgGeBOFFFwje0IvIDlBPsVZvfJfokcLt3f3dg0miJWkN6EkWERPLaDrP1DKq6zUjE8PPePSnWQNrGuQtPRR07fLkDhcPQ+8spJJw331cG8yaiCNpADOKa70rA8gTcB9VtWswFI4wgeTehff1ALHGECn4X9wvd5Wanf8TsGUp+Hx6WHuXQ7EKd+A2PShTbv47jzXklv8mDj44oTSDov9481u13lZA3c+/8h8L0ZXirl7xZjXv++wLP3t6FH5/lwmlbvXv8tgpEQObTIfBu62+spTlLtXTH6W1ncAXSOw+33fLfkeUi+XCh+8lNnCMrRi50fg5NO4bQU8z6C069JdsrZnNyZIl+8us7LUNpz8ZKCabiLwxx7b5ZG8g8L3nveedGn1rLwfQhx//ivxIhoH4NEpIpfyxRYp/8Y3SBNmS9rCR42cb7FtM/Bo4XiLCWwlwzdQT4OW6x/W8VFjlpjFmCQE0cr71zKJbPOwUsRpYy7YqCdcD7Tlbsjdgez8o+CeFxpWyM11U27D7XW4Srv4qC/xa82ww9pYk5u2qARkEn/wbI+mxNREYZsEGkn0nyHYjI6h6tHPlVEx0ZLoO/bKBpo7eu4EtiaDPzhq2yefGd//QPdi/3oBDdQSgt8w+G/KWJESLH5Gkv2to1aw+Q7vtoJaDBYu2zyrBBjPFNMUzf26wJrRU2+SinynT9Zgo5QsMc92sya8q1cne3bwNUBjNUTsdRlCLdaB2qpPvouViAvTzBUonqNwRpoWo7B4io6BGH9odFsya5/Gka6T3acs0B655tbJOCnaNf7rpYa+2H0UAQ3DQufuR6zfll7t9Zmufj+aPZ1DHzhotrFsH5y3cQw1mHNdf0rscPe6B6aFtkmGJcHKLygdrgJ9a0I0e25yXUVfNVR3hHzZd/2W4fuS6+Ndxn8hipHRPRnCmnJExG5E9avGo13Ahb43JeZPd5300Nmrn52MksVqZPtZvdFqkZi7vCLXlssWcA3NSZQ4jHgwz0edOguWdUb5Z8DrOvUE+4UgtOYL+4brw79R9h2K4nTI14Nhp/fDueNeZzhY54dTEd2Iq+3MDKMXCCDGeBU1tqezMIyihHOepun9f5wnURTW03bfP9H/DR+mCdm71j57I45Y/hfou2OyNNgOdzC+fKn8Kbg5Im7DMPQI+efr9KcJvbxoiciQF/lr7F8jpjVtvdbkJfHh2efKXpgeAl7Xhl6LOOTx4e9xp4Jh/hHVNtsbqIuSj/y3vWtnZIP+gifmgV4ScUwkfLEaPClF+DxM97uZ4JGoMewsLH2e2Xn/pyWvHp3RdTdf3hyamxMjRChK3P4/uv+X4rS7jn4vbn8qxt3p4DjZ5+/v/ff3fD85Dqbd/zqm/Id/+Id/+P/FfwBCOd/7fFnNPwAAAABJRU5ErkJggg=="
+                      height="100" width="100" alt=""></a>
+              <span>Acount Name</span>
+          </li>
+          <ul class="sidebar-list">
+              <li><a href="#"><i class="fa fa-home"></i>TRANG CHỦ</a> </span></li>
+              <li><a href="#"><i class="fa fa-line-chart"></i>BẢNG XẾP HẠNG</a></li>
+              <li><a href="#"><i class="fa fa-line-chart"></i>ALBUM</a></li>
+              <li><a href="#"><i class="fa fa-youtube-play" aria-hidden="false"></i>MV</a></li>
+
+          </ul>
+        </ul>
+        <!-- main-navbar -->
+        <ul>
+            <li>
+                <div class="btn-sidebar">
+                    <i class="fa fa-bars"></i>
                 </div>
-            </nav>
 
-            <!-- navbar brand -->
-            <a href="#" class="nav-brand">
-                <img src="https://is5-ssl.mzstatic.com/image/thumb/Purple113/v4/e1/90/dc/e190dc15-b89d-8e8a-2027-2fb11741a3d2/AppIcon-1x_U007emarketing-0-6-0-0-sRGB-85-220.png/600x600wa.png"
-                    class="logo" width="30" height="30" alt="Logo">Logo
-            </a>
-
-            <div class="search">
+            </li>
+            <li>
                 <form class="form-inline">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                </form>
-            </div>
-            <div class="icon-login">
+                    <input class="form-control mr-sm-1" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-secondary" type="button"my-2 my-sm-0 " type="submit">Search</button>
+                  </form>
+                  
+               
 
-            </div>
-        </header>
-        <div class="row">
+            </li>
+        </ul>
+        
+           
+            
+           
+      <!-- ---------------------------------------------------------- -->
+
+    </header>
+
+    <div class="container" ng-controller="MainCtrl">
+        
+        <!-- navbar brand -->
+
+    </div>
+   
+    <!-- <div class="row">
             <div class="col-md-12">
 
                 <h5>Songs</h5>
@@ -66,12 +81,12 @@
             </div>
         </div>
 
-        <hr />
+        <hr /> -->
 
-        <div class="row">
-            <div class="col-md-12">
-                <!-- init soundManager2 player -->
-                <sound-manager></sound-manager>
+    <!-- <div class="row">
+            <div class="col-md-12"> -->
+    <!-- init soundManager2 player -->
+    <!-- <sound-manager></sound-manager>
 
                 <p>
                     Currently Playing: {{ currentPlaying.title }} by {{ currentPlaying.artist }} ({{ currentPostion }} /
@@ -121,13 +136,15 @@
                     </li>
                 </ul>
             </div>
-        </div>
+        </div> -->
     </div>
 
     <script src="//connect.soundcloud.com/sdk.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script> -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
         crossorigin="anonymous"></script>
@@ -136,6 +153,7 @@
         crossorigin="anonymous"></script>
     <script src="../dist/angular-soundmanager2.js"></script>
     <script src="app.js"></script>
+    <script src="scripts.js"></script>
 </body>
 
 </html>

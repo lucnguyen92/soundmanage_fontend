@@ -1,8 +1,165 @@
 *{
   margin: 0px;
   padding: 0px;
+  user-select: none;
+  box-sizing: border-box;
+  font-family:sans-serif;
+
+
+
 
 }
+
+/* header */
+header{
+  height:80px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.form-inline{
+  position: absolute ;
+  width: 25rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);  
+
+  
+
+}
+.form-inline .form-control{
+  width:18rem;
+}
+.form-inline .btn{
+  margin-left:10px;
+}
+
+
+/* button sidebar */
+.btn-sidebar{
+  position: absolute;
+  display: inline-block;
+  top: 15px;
+  left: 45px;
+  height: 45px;
+  width:45px;
+  display: inline-block;
+  border: 1px solid white;
+  color: white;
+  text-align: center;
+  font-size: 28px;
+  border-radius:3px;
+  cursor: pointer;
+  transition: left 0.4s ease;
+  z-index: 1;
+
+
+
+}
+.btn-sidebar.click{
+  left:260px;
+
+}
+
+
+.btn-sidebar.click i::before{
+  content: '\f00d';
+  z-index: 1;
+
+}
+.btn-sidebar:hover{
+  background-color:white;
+  color:#9797A1;
+
+}
+
+
+/* sidebar */
+.sidebar{
+position: fixed;
+z-index: 1;
+height:100%;
+width: 250px;
+left:-250px;
+background-color:#f3efef47;
+transition: left 0.4s ease;
+
+}
+/* sidebar show */
+.sidebar.show{
+  left:0px;
+}
+
+
+.sidebar .acount-avatar{
+background-color:#F7F7F7 ;
+color:#9797A1;
+font-size:16px;
+font-weight:200;
+line-height:65px;
+text-align: center;
+letter-spacing:0.5px;
+margin-bottom: 20px;
+
+
+
+}
+.sidebar .acount-avatar img{
+  border-radius:50px;
+ 
+}
+.sidebar .acount-avatar span{
+  color: #aeaed1;
+}
+/* sidebar-list *********************************** */
+.sidebar .sidebar-list{
+  
+  height: 100%;
+  width: 100%;
+  line-height: 35px;
+  
+
+  
+
+}
+.sidebar .sidebar-list li{
+  margin: 3px;
+  list-style: none;
+  
+  
+}
+.sidebar .sidebar-list li a{
+  font-size:16px;
+  font-Weight: 300;
+  color: #9797A1;
+  display: block;
+  padding-left: 15px;
+  width:100%;
+  border-left: 3px solid  transparent;
+ 
+  
+  
+  text-decoration: none;
+  
+
+}
+.sidebar .sidebar-list li a i{
+  margin-right:8px;
+
+  font-size:16px;
+
+
+}
+
+.sidebar .sidebar-list li a:hover{
+  color: #9E90C2;
+  background-color: #f1f1f1;
+  border-left-color: #9E90C2;
+
+}
+
+
 .container{
   max-width: 1140px;
   display: block;
@@ -34,3 +191,5 @@
 li {
 	cursor: pointer;
 }
+
+/* navbar */
